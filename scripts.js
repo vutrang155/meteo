@@ -22,7 +22,7 @@ var getMeteo = function(){
 
     var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+',fr&APPID=ee07e2bf337034f905cde0bdedae3db8';
 
-    xhr.open('GET', url, false);
+    xhr.open('GET', url);
     xhr.send(null);
 
     xhr.onreadystatechange = function(){
