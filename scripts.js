@@ -1,4 +1,5 @@
-var getMeteo = function(){var xhr = null;
+var getMeteo = function(){
+  var xhr = null;
 
   if(window.XMLHttpRequest) // Firefox et autres
      xhr = new XMLHttpRequest();
@@ -21,9 +22,23 @@ var getMeteo = function(){var xhr = null;
 
     var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+',fr&APPID=ee07e2bf337034f905cde0bdedae3db8';
 
-    var meteo = xhr.open('GET', url, false);
+    xhr.open('GET', url, false);
+    xhr.send(null);
 
-    alert(meteo.toString());
+    xhr.onreadystatechange = function(){
+      if ( xhr.readyState == 4 ) {
+
+        let data = JSON.parse(xhr.responseText);
+
+        if ( xhr.status == 404 ) {
+
+          alert(data.message);
+
+        } else if ( xhr.status == 200 ) {
+
+        }
+      }
+    };
   }
 }
 
