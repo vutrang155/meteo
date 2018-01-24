@@ -60,7 +60,9 @@ var getMeteo = function(){
           document.getElementById("weather").innerHTML = weather+' - '+weatherDescription;
           document.getElementById("name").innerHTML = name;
           console.log(document.getElementById("weather").childNodes);
-          document.getElementById("weather").childNodes[0].className = getImage();
+          let iconImg = document.createElement("i");
+          document.getElementById("weather").appendChild(iconImg);
+          document.getElementById("weather").childNodes[1].className = getImage();
           document.getElementById("temp").innerHTML = (parseInt(temp-273,15).toString())+' °C';
           document.getElementById("pressure").innerHTML = pressure+' Pa';
           document.getElementById("humidity").innerHTML = humidity+' %';
