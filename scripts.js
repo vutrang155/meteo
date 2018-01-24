@@ -35,15 +35,7 @@ var getMeteo = function(){
 
         } else if ( xhr.status == 200 ) {
 
-          if(data.code == 200){
-
-            alert(date.message)
-          }
-
-          else{
-
-            alert(city)
-          }
+          alert(data.name);
 
         }
       }
