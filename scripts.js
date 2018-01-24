@@ -39,17 +39,18 @@ var getMeteo = function(){
           let weatherDescription = data.weather.description;
           let icon = data.weather.icon;
 
-          let temp = main.temp;
-          let pressure = main.pressure;
-          let humidity = main.humidity;
-          let tempMin = main.temp_min;
-          let tempMax = main.temp_max;
+          let temp = data.main.temp;
+          let pressure = data.main.pressure;
+          let humidity = data.main.humidity;
+          let tempMin = data.main.temp_min;
+          let tempMax = data.main.temp_max;
 
           let windSpeed = wind.speed;
 
           let getImage = function(id){
 
             //Retourner le chemin de l'image de l'icon par rapport à l'id
+            var ret = false;
 
             return ret;
 
@@ -57,9 +58,10 @@ var getMeteo = function(){
 
           document.getElementById("weather").innerHTML = weather;
           document.getElementById("weatherDescription").innerHTML = weatherDescription;
-          document.getElementById("icon").innerHTML = getImage();
+        //  document.getElementById("icon").innerHTML = getImage();
           document.getElementById("temp").innerHTML = (parseInt((temp-32)/1.8).toString())+' °C';
-          document.getElementById("humidity").innerHTML = humidity+' Pa';
+          document.getElementById("pressure").innerHTML = pressure+' Pa';
+          document.getElementById("humidity").innerHTML = humidity+' %';
           document.getElementById("tempMin").innerHTML = tempMin;
           document.getElementById("tempMax").innerHTML = tempMax;
           document.getElementById("windSpeed").innerHTML = windSpeed;
