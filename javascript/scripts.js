@@ -51,18 +51,19 @@ var getMeteo = function(){
           let getImage = function(id){
 
             //Retourner le chemin de l'image de l'icon par rapport à l'id
+
             var ret = "wi wi-day-sunny";
 
             return ret;
 
           };
 
-          document.getElementById("weather").innerHTML = weather+' - '+weatherDescription;
+          document.getElementById("weather").innerHTML = weather+' - '+weatherDescription+'&nbsp;';
           document.getElementById("name").innerHTML = name;
           console.log(document.getElementById("weather").childNodes);
           let iconImg = document.createElement("i");
           document.getElementById("weather").appendChild(iconImg);
-          document.getElementById("weather").childNodes[1].className = getImage();
+          document.getElementById("weather").childNodes[1].className = getImage(icon);
           document.getElementById("temp").innerHTML = (parseInt(temp-273,15).toString())+' °C';
           document.getElementById("pressure").innerHTML = pressure+' Pa';
           document.getElementById("humidity").innerHTML = humidity+' %';
