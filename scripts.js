@@ -18,7 +18,6 @@ var getMeteo = function(){
   if(xhr != null && xhr != false){
 
     var city = document.getElementById('city').value;
-    city = 'rennes';
 
     var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+',fr&APPID=ee07e2bf337034f905cde0bdedae3db8';
 
