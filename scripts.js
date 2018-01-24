@@ -23,7 +23,7 @@ var getMeteo = function(){var xhr = null;
 
     var meteo = xhr.open('GET', url, false);
 
-    input(meteo.toString());
+    alert(meteo.toString());
   }
 }
 
