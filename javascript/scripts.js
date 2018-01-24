@@ -59,7 +59,7 @@ var getMeteo = function(){
 
           document.getElementById("weather").innerHTML = weather+' - '+weatherDescription;
           document.getElementById("name").innerHTML = name;
-          console.log(document.getElementById("weather").childNodes)
+          console.log(document.getElementById("weather").childNodes);
           document.getElementById("weather").childNodes[0].className = getImage();
           document.getElementById("temp").innerHTML = (parseInt(temp-273,15).toString())+' °C';
           document.getElementById("pressure").innerHTML = pressure+' Pa';
