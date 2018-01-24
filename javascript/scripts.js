@@ -1,5 +1,5 @@
 var getMeteo = function(){
-  var xhr = null;
+  let xhr = null;
 
   if(window.XMLHttpRequest) // Firefox et autres
      xhr = new XMLHttpRequest();
@@ -17,9 +17,9 @@ var getMeteo = function(){
 
   if(xhr != null && xhr != false){
 
-    var city = document.getElementById('city').value;
+    let city = document.getElementById('city').value;
 
-    var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+',fr&APPID=ee07e2bf337034f905cde0bdedae3db8';
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+',fr&APPID=ee07e2bf337034f905cde0bdedae3db8';
 
     xhr.open('GET', url);
     xhr.send(null);
@@ -52,7 +52,25 @@ var getMeteo = function(){
 
             //Retourner le chemin de l'image de l'icon par rapport à l'id
 
-            var ret = "wi wi-day-sunny";
+            let ret = "wi ";
+
+            let fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+            let code = fileSystem.OpenTextFile("codeIcon.txt", 1 , false);
+            let arrayCode = (code.ReadAll()).split('!');
+
+            for(let e in code){
+
+              let tab = e.split(':');
+
+              if(tab[0].equals(id)){
+
+                ret += tab[1];
+                break;
+              }
+
+            }
+
+            code.Close();
 
             return ret;
 
