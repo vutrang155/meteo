@@ -1,6 +1,9 @@
 div#box {
-  position: relative;
-  top: 40px;
+  top: 50px;
+}
+
+div#result {
+  alignment : center;
 }
 
 body {
