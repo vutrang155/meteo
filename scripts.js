@@ -58,7 +58,7 @@ var getMeteo = function(){
           };
 
           document.getElementById("weather").innerHTML = weather+' - '+weatherDescription;
-          document.getElementById("city").innerHTML = ' t'+name;
+          document.getElementById("city").innerHTML = " t"+name;
         //  document.getElementById("icon").innerHTML = getImage();
           document.getElementById("temp").innerHTML = ' '+(parseInt((temp-32)/1.8).toString())+' °C';
           document.getElementById("pressure").innerHTML = ' '+pressure+' Pa';
