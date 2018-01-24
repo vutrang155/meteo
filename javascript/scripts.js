@@ -20,7 +20,7 @@ var getMeteo = function(){
 
     let city = document.getElementById('city').value; // Récupération de la ville entrée par l'utilisateur
 
-    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+',fr&APPID=ee07e2bf337034f905cde0bdedae3db8'; // L'URL à partir de laquelle on va lancer la requete
+    let url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=ee07e2bf337034f905cde0bdedae3db8'; // L'URL à partir de laquelle on va lancer la requete
 
     xhr.open('GET', url); // Envoi de la requête pour récupérer le JSON
     xhr.send(null);
@@ -32,7 +32,7 @@ var getMeteo = function(){
 
         if ( xhr.status == 404 ) { //Verification que la ville existe bien
 
-          alert(data.message);
+          alert("Error : City not found !");
 
         } else if ( xhr.status == 200 ) {
 
@@ -152,6 +152,8 @@ var getMeteo = function(){
           document.getElementById("tempMin").innerHTML = (parseInt(tempMin-273,15).toString())+' °C';; // Conversion de Kelvin en °C
           document.getElementById("tempMax").innerHTML = (parseInt(tempMax-273,15).toString())+' °C';;
           document.getElementById("windSpeed").innerHTML = (parseInt(windSpeed*1.609).toString())+' km/h'; // Conversion de mph en km/h
+
+          document.getElementById('result').style.opacity = "1"; // Fait apparaitre le div
         }
       }
     }
