@@ -36,6 +36,7 @@ var getMeteo = function(){
         } else if ( xhr.status == 200 ) {
 
           let weather = data.weather[0].main;
+          let name = data.name;
           let weatherDescription = data.weather[0].description;
           let icon = data.weather[0].icon;
 
@@ -57,13 +58,14 @@ var getMeteo = function(){
           };
 
           document.getElementById("weather").innerHTML = weather+' - '+weatherDescription;
+          document.getElementById("city").innerHTML = ' t'+name;
         //  document.getElementById("icon").innerHTML = getImage();
-          document.getElementById("temp").innerHTML = (parseInt((temp-32)/1.8).toString())+' °C';
-          document.getElementById("pressure").innerHTML = pressure+' Pa';
-          document.getElementById("humidity").innerHTML = humidity+' %';
+          document.getElementById("temp").innerHTML = ' '+(parseInt((temp-32)/1.8).toString())+' °C';
+          document.getElementById("pressure").innerHTML = ' '+pressure+' Pa';
+          document.getElementById("humidity").innerHTML = ' '+humidity+' %';
           document.getElementById("tempMin").innerHTML = (parseInt((tempMin-32)/1.8).toString())+' °C';;
           document.getElementById("tempMax").innerHTML = (parseInt((tempMax-32)/1.8).toString())+' °C';;
-          document.getElementById("windSpeed").innerHTML = (parseInt(windSpeed*1.609).toString())+' km/h';
+          document.getElementById("windSpeed").innerHTML = ' '+(parseInt(windSpeed*1.609).toString())+' km/h';
 
         }
       }
