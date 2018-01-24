@@ -43,7 +43,7 @@ var getMeteo = function(){
 
           else{
 
-            alert('ok')
+            alert(city)
           }
 
         }
