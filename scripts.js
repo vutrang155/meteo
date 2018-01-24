@@ -35,12 +35,20 @@ var getMeteo = function(){
 
         } else if ( xhr.status == 200 ) {
 
-          alert(data.name);
+          var weather = data.weather.main;
+          var weatherDescription = data.weather.description;
+          var icon = data.weather.icon;
+
+          var temp = main.temp;
+          var pressure = main.pressure;
+          var humidity = main.humidity;
+          var tempMin = main.temp_min;
+          var tempMax = main.temp_max;
+
+          var windSpeed = wind.speed;
 
         }
       }
     };
   }
 }
-
-getMeteo();
