@@ -35,17 +35,34 @@ var getMeteo = function(){
 
         } else if ( xhr.status == 200 ) {
 
-          var weather = data.weather.main;
-          var weatherDescription = data.weather.description;
-          var icon = data.weather.icon;
+          let weather = data.weather.main;
+          let weatherDescription = data.weather.description;
+          let icon = data.weather.icon;
 
-          var temp = main.temp;
-          var pressure = main.pressure;
-          var humidity = main.humidity;
-          var tempMin = main.temp_min;
-          var tempMax = main.temp_max;
+          let temp = main.temp;
+          let pressure = main.pressure;
+          let humidity = main.humidity;
+          let tempMin = main.temp_min;
+          let tempMax = main.temp_max;
 
-          var windSpeed = wind.speed;
+          let windSpeed = wind.speed;
+
+          let getImage = function(id){
+
+            //Retourner le chemin de l'image de l'icon par rapport à l'id
+
+            return ret;
+
+          };
+
+          document.getElementById("weather").innerHTML = weather;
+          document.getElementById("weatherDescription").innerHTML = weatherDescription;
+          document.getElementById("icon").innerHTML = getImage();
+          document.getElementById("temp").innerHTML = (parseInt((temp-32)/1.8).toString())+' °C';
+          document.getElementById("humidity").innerHTML = humidity+' Pa';
+          document.getElementById("tempMin").innerHTML = tempMin;
+          document.getElementById("tempMax").innerHTML = tempMax;
+          document.getElementById("windSpeed").innerHTML = windSpeed;
 
         }
       }
